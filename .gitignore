@@ -3,3 +3,6 @@ env
 bin
 obj
 test.py
+build
+dist
+main.spec
