@@ -25,7 +25,6 @@ def list_pending_patches():
             print("-" * 60)
 
             updates_info[update_id] = update
-
     return updates_info
 
 
@@ -34,7 +33,6 @@ def download_patch(update):
     updates_to_download.Add(update)
     downloader = win32com.client.Dispatch("Microsoft.Update.Downloader")
     downloader.Updates = updates_to_download
-
     print(f"[+] Yuklab olinayabdi: {update.Title}")
     result = downloader.Download()
     if result.ResultCode == 2:
@@ -58,22 +56,3 @@ def install_patch(update):
         print(f"[-] O'rnatishda muammo, kod: {result.ResultCode} natija: {result}")
 
     print(f"[+] Reboot kerak: {result.RebootRequired}")
-
-
-if __name__ == "__main__":
-    updates = list_pending_patches()
-
-    if updates:
-        # Qaysi ID ni yuklashni tanlash
-        a = input("ID (download): ").strip()
-        if a in updates:
-            download_patch(updates[a])
-        else:
-            print("[-] Bunday ID topilmadi.")
-
-        # Qaysi ID ni o‘rnatishni tanlash
-        b = input("ID (install): ").strip()
-        if b in updates:
-            install_patch(updates[b])
-        else:
-            print("[-] Bunday ID topilmadi.")
