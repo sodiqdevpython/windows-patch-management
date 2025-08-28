@@ -1,0 +1,5 @@
+{
+    "patch_url": "http://94.141.85.114:4555/patch/patches/",
+    "interval": 5,
+    "ws_url_connection": "ws://94.141.85.114:4555/ws/device/fire_wall"
+}

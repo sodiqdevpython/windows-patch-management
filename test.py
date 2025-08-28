@@ -18,10 +18,10 @@ def list_pending_patches():
             print(f"update_id:{update_id}")
             print(f"title:{update.Title}")
             print(f"kb:{list(update.KBArticleIDs) if update.KBArticleIDs else 'Yo‘q'}")
-            print(f"critical:{update.IsMandatory}")
-            print(f"reboot_reuqired: {update.RebootRequired}")
-            print(f"downloaded: {update.IsDownloaded}")
-            print(f"support  : {update.SupportUrl}")
+            print(f"Mandatory:{update.IsMandatory}")
+            print(f"reboot_reuqired:{update.RebootRequired}")
+            print(f"downloaded:{update.IsDownloaded}")
+            print(f"support:{update.SupportUrl}")
             print("-" * 60)
 
             updates_info[update_id] = update
