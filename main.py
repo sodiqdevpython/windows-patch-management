@@ -39,6 +39,7 @@ def run_in_sta_thread(func, *args):
 
 async def send_patches_to_backend(session: aiohttp.ClientSession, patches: list):
     for patch in patches:
+        print(patch)
         try:
             async with session.post(BACKEND_URL, json=patch) as resp:
                 if resp.status in (200, 201):
